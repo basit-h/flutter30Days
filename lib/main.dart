@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:thirty_days_challenge/pages/counter_app.dart';
 import 'package:thirty_days_challenge/pages/tik_tok_ui_example_stack.dart';
-
-import 'pages/day5.dart';
-import 'pages/signup_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,10 +11,10 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter 30 days chellange',
-      home: const TikTokUiExampleStack(),
+      home: CounterApp(),
     );
   }
 }
