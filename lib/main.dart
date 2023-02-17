@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thirty_days_challenge/pages/counter_app.dart';
+import 'package:thirty_days_challenge/pages/login_page.dart';
 import 'package:thirty_days_challenge/pages/tik_tok_ui_example_stack.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter 30 days chellange',
-      home: CounterApp(),
+      home: LoginPage(),
     );
   }
 }

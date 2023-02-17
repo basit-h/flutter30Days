@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  double height = 120;
+  double width = 120;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,10 +23,42 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Image.asset(
-              'assets/bird.png',
-              height: 120,
-              width: 120,
+            InkWell(
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () {
+                setState(
+                  () {
+                    height = 140;
+                    width = 140;
+                    // height = 120;
+                    // width = 120;
+                  },
+                );
+              },
+              onTapCancel: () {
+                setState(() {
+                  height = 120;
+                  width = 120;
+                });
+              },
+              onFocusChange: (val) {
+                setState(() {
+                  height = 120;
+                  width = 120;
+                });
+              },
+              child: AnimatedContainer(
+                height: height,
+                width: width,
+                duration: const Duration(milliseconds: 600),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(100)),
+                curve: Curves.bounceInOut,
+                child: Image.asset(
+                  'assets/bird.png',
+                ),
+              ),
             ),
             const SizedBox(
               height: 20,
